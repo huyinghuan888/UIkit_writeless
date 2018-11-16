@@ -2,4 +2,4 @@
 
 #如果有则把这个.less文件写入到custom/项目模板目录名/_modular.less当中。
 
-#这样在前端uikit前端文件构建时只需引入一个入口文件_modular.less，即可有针对的引入相应的.less代码了。
+#这样在uikit前端文件构建时只需引入这个_modular.less入口文件，即可有针对的引入相应的.less代码了。
