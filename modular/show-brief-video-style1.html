@@ -1,0 +1,15 @@
+<div class="uk-grid-large" uk-grid>
+	<div class="uk-width-large@m uk-hidden-touch">
+		<div style="border: 3px solid rgba(255,255,255,.85);">
+			<video loop muted playsinline uk-video="autoplay: inview">
+				<?php $ext_about=mysql_fetch_array(mysql_query("select * from dux_ext_about where data_id=1")); ?>
+	    	<source src="{$sys.cdn}{$ext_about.video}" type="video/mp4">
+			</video>
+		</div>
+	</div>
+	<div class="uk-width-expand uk-text-small">
+		<h3 class="uk-heading-bullet"><b>关于我们</b> <small class="uk-text-muted"><i>About Us</i></small></h3>
+		{$ext_about.brief}
+		<a href='<!--echo{app="DuxCms" label="curl" class_id=1}-->' class="uk-button uk-button-default">详细介绍</a>
+	</div>
+</div>

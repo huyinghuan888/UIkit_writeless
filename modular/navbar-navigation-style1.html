@@ -1,0 +1,53 @@
+<nav class="uk-navbar-container uk-box-shadow-medium" uk-navbar>
+	<div class="nav-overlay uk-navbar-left">
+		<a href="/" title="网站首页" class="uk-navbar-item uk-padding uk-padding-remove-vertical" style="border-right: 1px solid #c5c6d1;"><span uk-icon="icon: uk-home; ratio: 1.6;"></span></a>
+	</div>
+	<div class="nav-overlay uk-navbar-left uk-visible@m">
+		<ul class="uk-navbar-nav">
+			<!--category{app="DuxCms" label="categoryList" parent_id=0 limit=8}-->
+			<li class="<!--if{$category.class_id==$topCategoryInfo.class_id}-->uk-active<!--{/if}--> {$category.css}">
+				<a href="{$category.curl}">{$category.name}<!--if{$category.class_id==2}--><span uk-icon="uk-chevron-down"></span><!--{/if}--></a>
+				<!--if{$category.class_id==2}-->
+				<div class="uk-navbar-dropdown" uk-drop="boundary: !nav; boundary-align: true; pos: bottom-justify;">
+					<div class="uk-navbar-dropdown-grid uk-child-width-1-6" uk-grid>
+						<!--list{app="DuxCms" label="contentList" class_id=$category.class_id pos_id=1 limit=6}-->
+						<div>
+							<div class="uk-animation-scale-up">
+								<a href="{$list.aurl}" class="uk-text-small uk-text-center uk-link-heading">
+									<img src="{$sys.cdn}{$list.image}" alt="{$list.title}" />
+									<div style="margin-top: 5px;">{$list.title}</div>
+								</a>
+							</div>
+						</div>
+						<!--{/list}-->
+					</div>
+				</div>
+				<!--{/if}-->
+			</li>
+			<!--{/category}-->
+		</ul>
+	</div>
+	<div class="uk-navbar-left uk-hidden@m">
+		<div class="uk-navbar-item">
+			<form action="{url('Article/Search/index')}" method="post" class="uk-search uk-search-navbar uk-width-auto">
+				<span uk-search-icon></span>
+				<input name="keyword" type="search" class="uk-search-input" style="font-size: 1rem;" placeholder="Search..." />
+				<input name="model" type="hidden" value="1">
+			</form>
+		</div>
+	</div>
+	<div class="nav-overlay uk-navbar-right">
+		<a href="#" class="uk-navbar-item uk-padding uk-padding-remove-vertical uk-visible@l" style="border-left: 1px solid #c5c6d1;" uk-search-icon="ratio: 1.6;" uk-toggle="target: .nav-overlay; animation: uk-animation-slide-left-small;"></a>
+		<a href="#menu-offcanvas" class="uk-navbar-item uk-link-reset uk-hidden@l" style="border-left: 1px solid #c5c6d1;" uk-toggle><span class="uk-margin-small-right uk-visible@s uk-hidden@m">MENU</span><span uk-navbar-toggle-icon="icon: uk-menu; ratio: 1.6;"></span></a>
+	</div>
+	<div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
+		<div class="uk-navbar-item uk-width-expand">
+			<form action="{url('Article/Search/index')}" method="post" class="uk-search uk-search-navbar uk-width-1-1">
+				<span uk-search-icon></span>
+				<input name="keyword" type="search" class="uk-search-input" placeholder="Search..." autofocus />
+				<input name="model" type="hidden" value="1" />
+			</form>
+		</div>
+		<a href="#" class="uk-navbar-toggle" uk-close="ratio: 1.6;" uk-toggle="target: .nav-overlay; animation: uk-animation-slide-left-small;"></a>
+	</div>
+</nav>

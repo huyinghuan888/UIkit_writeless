@@ -1,0 +1,12 @@
+<div class="uk-child-width-1-2@s uk-grid-small" uk-grid>
+	<div class="uk-text-truncate">
+		<!--if{$prevInfo}-->
+		上一条：<a href="{$prevInfo.aurl}">{$prevInfo.title}</a>
+		<!--{/if}-->
+	</div>
+	<div class="uk-text-truncate uk-text-right">
+		<!--if{$nextInfo}-->
+		下一条：<a href="{$nextInfo.aurl}">{$nextInfo.title}</a>
+		<!--{/if}-->
+	</div>
+</div>

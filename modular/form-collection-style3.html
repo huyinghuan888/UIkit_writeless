@@ -1,0 +1,129 @@
+<script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+<script src="__PUBLIC__/js/form/Validform.min.js"></script>
+<style>
+	/*==========以下部分是Validform必须的===========*/
+
+	.Validform_checktip {
+		margin-left: 2px;
+		line-height: 28px;
+		height: 28px;
+		overflow: hidden;
+		color: #999;
+		font-size: 14px;
+		display: none;
+	}
+
+	.Validform_right {
+		color: #71b83d;
+		padding-left: 20px;
+		background: url(__TPL__/images/right.png) no-repeat left center;
+		display: block;
+	}
+
+	.Validform_wrong {
+		color: #ff3300;
+		padding-left: 20px;
+		white-space: nowrap;
+		background: url(__TPL__/images/error.png) no-repeat left center;
+		display: block;
+	}
+
+	.Validform_loading {
+		padding-left: 20px;
+		background: url(__TPL__/images/onLoad.gif) no-repeat left center;
+	}
+
+	.Validform_error {
+		border-color: #FF3300;
+	}
+
+	#Validform_msg {
+		color: #7d8289;
+		font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;
+		width: 280px;
+		-webkit-box-shadow: 2px 2px 3px #aaa;
+		-moz-box-shadow: 2px 2px 3px #aaa;
+		background: #fff;
+		position: absolute;
+		top: 0px;
+		right: 50px;
+		z-index: 99999;
+		display: none;
+		filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#999999');
+		box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+	}
+
+	#Validform_msg .iframe {
+		position: absolute;
+		left: 0px;
+		top: -1px;
+		z-index: -1;
+	}
+
+	#Validform_msg .Validform_title {
+		line-height: 25px;
+		height: 25px;
+		text-align: left;
+		font-weight: bold;
+		padding: 0 8px;
+		color: #fff;
+		position: relative;
+		background-color: #999;
+		background: -moz-linear-gradient(top, #999, #666 100%);
+		background: -webkit-gradient(linear, 0 0, 0 100%, from(#999), to(#666));
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#999999', endColorstr='#666666');
+	}
+
+	#Validform_msg a.Validform_close:link,
+	#Validform_msg a.Validform_close:visited {
+		line-height: 22px;
+		position: absolute;
+		right: 8px;
+		top: 0px;
+		color: #fff;
+		text-decoration: none;
+	}
+
+	#Validform_msg a.Validform_close:hover {
+		color: #ccc;
+	}
+
+	#Validform_msg .Validform_info {
+		padding: 8px;
+		border: 1px solid #bbb;
+		border-top: none;
+		text-align: left;
+	}
+</style>
+<form action="{url('DuxCms/Form/push')}" method="post" autocomplete="off" class="validform">
+	<fieldset class="uk-fieldset">
+		<legend class="uk-legend uk-text-small uk-margin-bottom">发表您的留言（<samp>*</samp>号为必填项）：</legend>
+		<div class="uk-grid-small" uk-grid>
+			<div class="uk-width-1-2">
+				<input type="text" name="name" placeholder="* 昵称" class="uk-input" datatype="*" nullmsg="昵称不能为空！" />
+			</div>
+			<div class="uk-width-1-2">
+				<input type="text" name="cellphone" placeholder="* 手机" class="uk-input" datatype="m" nullmsg="手机不能为空！" errormsg="手机号格式错误，请重新填写！" />
+			</div>
+			<div class="uk-width-1-2">
+				<input type="text" name="chat" placeholder="微信 QQ" class="uk-input" />
+			</div>
+			<div class="uk-width-1-2">
+				<input type="text" name="email" placeholder="邮箱" class="uk-input" ignore="ignore" datatype="e" errormsg="邮箱格式错误，请重新填写！" />
+			</div>
+			<div class="uk-width-1-1">
+				<textarea name="content" cols="30" rows="4" placeholder="内容" class="uk-textarea"></textarea>
+			</div>
+		</div>
+	</fieldset>
+	<input type="hidden" name="token" value='<!--echo{app="DuxCms" label="formToken" table="collection"}-->' />
+	<input type="hidden" name="table" value="collection" />
+	<div class="uk-text-center uk-margin-medium-top">
+		<button type="submit" class="uk-button uk-button-primary uk-button-large"><span uk-icon="icon: paper-plane; ratio: 0.04"></span><span class="uk-margin-small-left uk-margin-small-right uk-text-middle">提交留言</span></button>
+	</div>
+</form>
+<script>
+	$(".validform").Validform({
+		tiptype: 3
+	});
+</script>

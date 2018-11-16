@@ -1,0 +1,12 @@
+<!--category{app="DuxCms" label="categoryList" class_id=2}-->
+<div class="uk-tile uk-tile-primary uk-padding-small">
+	<h5><span uk-icon="icon: list-alt; ratio: 0.05" class="uk-margin-small-right" style="opacity: .382;"></span>{$category.name}</h5>
+</div>
+<div class="uk-tile uk-tile-muted uk-padding-small">
+	<ul class="uk-list uk-list-divider uk-text-small uk-link-heading">
+		<!--list{app="DuxCms" label="categoryList" parent_id=2}-->
+		<li<!--if{$categoryInfo.class_id==$list.class_id}--> class="uk-active"<!--{/if}-->><a href="{$list.curl}"><span uk-icon="icon: angle-right; ratio: .03" class="uk-margin-small-right uk-margin-small-left"></span>{$list.name}</a></li>
+		<!--{/list}-->
+	</ul>
+</div>
+<!--{/category}-->

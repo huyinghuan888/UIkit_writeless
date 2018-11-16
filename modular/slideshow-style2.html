@@ -1,0 +1,32 @@
+<div class="uk-position-relative" uk-slideshow="max-height: 500; min-height: 300; autoplay: true; pause-on-hover: false;">
+	<ul class="uk-slideshow-items">
+		<!--banner{app="DuxCms" label="formList" table="banner" order="sequence asc" limit=6}-->
+		<li>
+			<img src="{$banner.image.0.url}" alt="" uk-cover />
+			<!--if{$banner.style.value==1}-->
+			<div class="uk-position-relative uk-position-center-left">
+				<div class="uk-container">
+					<div class="uk-margin-small-left">
+						<h1 class="uk-text-bold"><small>{$banner.primary_a}</small> <span class="uk-text-warning uk-heading-primary">{$banner.primary_b}</span></h1>
+						<p style="margin: 25px 0;">
+							<span class="uk-background-primary uk-h3" style="padding: 3px 50px 5px; color: #fff;">{$banner.item}</span>
+						</p>
+						<div class="uk-text-muted">———<span class="uk-h4 uk-margin-small-left uk-margin-small-right">{$banner.secondary}</span>———</div>
+					</div>
+				</div>
+			</div>
+			<!--elseif{$banner.style.value==2}-->
+			<div class="uk-overlay-default uk-position-center uk-padding-small">
+				<div class="uk-overlay uk-overlay-default uk-text-center">
+					<p class="uk-text-primary uk-text-bold uk-heading-primary"><small class="uk-text-top">{$banner.primary_a}&nbsp;&nbsp;{$banner.primary_b}</small></p>
+					<p class="uk-text-muted">———<span class="uk-h4 uk-margin-small-left uk-margin-small-right">{$banner.secondary}</span>———</p>
+				</div>
+			</div>
+			<!--{/if}-->
+		</li>
+		<!--{/banner}-->
+	</ul>
+	<div class="uk-light">
+		<!--#include file="modular/slidenav-slideshow-style2.html"-->
+	</div>
+</div>

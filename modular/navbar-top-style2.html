@@ -1,0 +1,33 @@
+<!--config{app="DuxCms" label="formList" table="config" limit=1}--><!--{/config}-->
+<?php
+	# 手机号码美化显示，插入“-”
+	$process = substr_replace($config.cellphone_1, "-", 3, 0);
+	$cellphone_1 = substr_replace($process, "-", 8, 0);
+	$process = substr_replace($config.cellphone_2, "-", 3, 0);
+	$cellphone_2 = substr_replace($process, "-", 8, 0);
+?>
+<nav class="uk-navbar-container uk-navbar-transparent">
+	<div class="uk-container">
+		<div uk-navbar>
+			<div class="uk-navbar-left">
+				<a href="/" class="uk-navbar-item uk-logo">
+					<img src="{$config.logo}" width="55" height="55" uk-svg />
+					<span class="uk-h2 uk-margin-remove-vertical uk-margin-small-left uk-text-primary uk-text-bold">{$sys.site_copyright}</span>
+				</a>
+				<span class="uk-text-muted" style="line-height: 1.2;"><span class="uk-margin-right" style="color: #ccc;">|</span>为客户提供诚信贴心的服务</span>
+			</div>
+			<div class="uk-navbar-right">
+				<div class="uk-navbar-item uk-clearfix">
+					<div class="uk-float-left">
+						<span class="uk-text-warning uk-margin-top uk-margin-small-right" uk-icon="icon: ic_phone_in_talk_48px; ratio: 1;"></span>
+					</div>
+					<div class="uk-float-right">
+						<span class="uk-text-muted">全国咨询热线：</span>
+						<div class="uk-text-warning uk-text-bold" style="font-size: 20px;">{$cellphone_1}</div>
+						<div class="uk-text-warning uk-text-bold" style="font-size: 20px;">{$cellphone_2}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>

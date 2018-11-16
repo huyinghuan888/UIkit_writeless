@@ -1,0 +1,14 @@
+<ul class="uk-list uk-list-divider uk-text-small uk-link-heading">
+	<!--foreach{$pageList as $vo}-->
+	<li<!--if{$vo.i>0}--> style="border-top-style: dashed;"<!--{/if}-->>
+		<div class="uk-clearfix">
+			<a href="{$vo.aurl}" title="{$vo.title}" class="uk-float-left">
+				<span uk-icon="uk-triangle-right"></span><span class="uk-text-middle">{$vo.title}</span>
+			</a>
+			<span class="uk-float-right">
+				<span class="uk-text-middle">{date('Y-m-d H:i:s',$vo.time)}</span>
+			</span>
+		</div>
+	</li>
+	<!--{/foreach}-->
+</ul>

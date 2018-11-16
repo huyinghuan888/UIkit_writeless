@@ -1,0 +1,22 @@
+<?php $ext_case=mysql_fetch_array(mysql_query("select * from dux_ext_case where data_id=17")); $gallery=unserialize($ext_case.gallery); ?>
+<div class="uk-position-relative uk-visible-toggle" uk-slider="autoplay: true; autoplay-interval: 4000;">
+	<ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-4@l uk-grid-medium" uk-grid uk-lightbox="animation: fade; autoplay: 1;">
+		<!--foreach{$gallery as $vo}-->
+		<li>
+			<div class="uk-inline-clip uk-transition-toggle uk-box-shadow-small uk-box-shadow-hover-medium">
+				<img src="{$sys.cdn}{$vo.url}?x-oss-process=style/537x358" class="uk-transition-scale-up uk-transition-opaque">
+				<div class="uk-overlay-primary uk-position-cover uk-transition-fade">
+					<div class="uk-position-center">
+						<span uk-overlay-icon></span>
+					</div>
+				</div>
+				<a href="{$sys.cdn}{$vo.url}" data-caption="{$vo.title}" class="uk-position-cover"></a>
+			</div>
+			<p class="uk-margin-small-top uk-text-small uk-text-center">{$vo.title}</p>
+		</li>
+		<!--{/foreach}-->
+	</ul>
+	<div class="uk-light uk-hidden-hover">
+		<!--#include file="modular/slidenav-slider-style1-large.html"-->
+	</div>
+</div>

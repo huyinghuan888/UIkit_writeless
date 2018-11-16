@@ -1,0 +1,14 @@
+<nav class="uk-navbar-container uk-navbar-transparent uk-background-primary">
+	<div class="uk-container">
+		<div uk-navbar>
+			<div class="uk-navbar-left uk-margin-remove">
+				<ul class="uk-navbar-nav">
+					<li<!--if{!$topCategoryInfo}--> class="uk-active"<!--{/if}-->><a href="/" style="height: 50px;">网站首页</a></li>
+					<!--category{app="DuxCms" label="categoryList" parent_id=0}-->
+					<li<!--if{$category.class_id==$topCategoryInfo.class_id}--> class="uk-active"<!--{/if}--> style="margin-left: 5px;"><a href="{$category.curl}" style="height: 50px;">{$category.name}</a></li>
+					<!--{/category}-->
+				</ul>
+			</div>
+		</div>
+	</div>
+</nav>

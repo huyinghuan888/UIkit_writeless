@@ -1,0 +1,13 @@
+<!--config{app="DuxCms" label="formList" table="config" limit=1}--><!--{/config}-->
+<?php
+	# 手机号码美化显示，插入“-”
+	$process = substr_replace($config.cellphone_1, "-", 3, 0);
+	$cellphone_1 = substr_replace($process, "-", 8, 0);
+	$process = substr_replace($config.cellphone_2, "-", 3, 0);
+	$cellphone_2 = substr_replace($process, "-", 8, 0);
+?>
+<div class="uk-tile uk-padding-small uk-background-cover" style="background-image: url(__TPL__/images/modular/contact-sidebar-style2-a.png); color: #fff;">
+	<div><span uk-icon="icon: phone; ratio: .045;"></span> 全国咨询热线：</div>
+	<div class="uk-text-bold" style="font-size: 26px;">{$cellphone_1}</div>
+	<div class="uk-text-bold" style="font-size: 26px;">{$cellphone_2}</div>
+</div>

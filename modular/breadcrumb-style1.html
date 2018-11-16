@@ -1,0 +1,6 @@
+<ul class="uk-breadcrumb uk-margin-remove">
+	<li><span class="uk-margin-small-right uk-text-muted"><span uk-icon="uk-location"></span> <span class="uk-visible@l">当前位置：</span></span><a href="/">首页</a></li>
+	<!--foreach{$crumb as $vo}-->
+	<li><a href="{$vo.url}">{$vo.name}</a></li>
+	<!--{/foreach}-->
+</ul>

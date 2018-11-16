@@ -1,0 +1,12 @@
+<div class="uk-margin-bottom uk-grid-collapse uk-grid-match" uk-grid>
+	<div class="uk-width-small uk-flex-middle uk-background-primary uk-visible@s">
+		<div class="uk-tile uk-tile-primary uk-tile-xsmall uk-text-center">{$topCategoryInfo.name}</div>
+	</div>
+	<div class="uk-width-expand">
+		<div class="uk-tile uk-tile-muted uk-tile-xsmall uk-link-heading">
+			<!--category{app="DuxCms" label="categoryList" parent_id=$topCategoryInfo.class_id}-->
+			<a href="{$category.curl}" class="uk-button uk-button-text<!--if{$category.class_id==$categoryInfo.class_id}--> uk-text-primary<!--{/if}-->" style="padding: 5px; margin: 0 5px;">{$category.name}</a>
+			<!--{/category}-->
+		</div>
+	</div>
+</div>

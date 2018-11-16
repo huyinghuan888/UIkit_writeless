@@ -1,0 +1,20 @@
+<!--foreach{$pageList as $vo}-->
+<div class="uk-grid-collapse uk-position-relative" uk-grid>
+	<div class="uk-width-auto" style="width: 110px; border-right: 1px solid #ddd;">
+		<div style="padding: 2px 25px 0 0; font-size: 15px;">{date('Y/m/d',$vo.time)}</div>
+	</div>
+	<div class="uk-width-expand">
+		<div style="padding: 2px 0 40px 25px;">
+			<div class="uk-link-heading uk-margin-small-bottom uk-text-truncate" style="font-size: 15px;">
+				<a href="{$vo.aurl}">{$vo.title}</a>
+			</div>
+			<div class="uk-text-small">{len($vo.description,48)}</div>
+		</div>
+	</div>
+	<div class="uk-position-absolute" style="margin-left: 100px;">
+		<span class="uk-icon-button" style="width: 18px; height: 18px; background-color: #f4f4f4;">
+			<span class="uk-border-circle" style="width: 12px; height: 12px; background-color: #bababa;"></span>
+		</span>
+	</div>
+</div>
+<!--{/foreach}-->
